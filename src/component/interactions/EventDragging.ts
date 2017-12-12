@@ -139,9 +139,10 @@ export default class EventDragging extends Interaction {
 				isDragging = false;
 				mouseFollower = new MouseFollower(seg.el, {
 					additionalClass: 'fc-dragging',
-					parentEl: view.el,
+					parentEl: $('body'),
 					opacity: dragListener.isTouch ? null : this.opt('dragOpacity'),
 					revertDuration: this.opt('dragRevertDuration'),
+					onD_Dragging: view.opt('onD_Dragging') || function () {},
 					zIndex: 2 // one above the .fc-view
 				});
 				mouseFollower.hide(); // don't show until we know this is a real drag
