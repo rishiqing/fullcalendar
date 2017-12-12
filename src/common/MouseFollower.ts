@@ -172,7 +172,7 @@ export default class MouseFollower {
 	handleMove(ev) {
 		this.topDelta = getEvY(ev) - this.y0;
 		this.leftDelta = getEvX(ev) - this.x0;
-
+		this.options.onD_Dragging({ x:ev.pageX, y:ev.pageY });
 		if (!this.isHidden) {
 			this.updatePosition();
 		}
