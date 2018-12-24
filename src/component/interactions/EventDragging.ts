@@ -139,7 +139,7 @@ export default class EventDragging extends Interaction {
 				isDragging = false;
 				mouseFollower = new MouseFollower(seg.el, {
 					additionalClass: 'fc-dragging',
-					parentEl: $('body'),
+					parentEl: view.el,
 					opacity: dragListener.isTouch ? null : this.opt('dragOpacity'),
 					revertDuration: this.opt('dragRevertDuration'),
 					onD_Dragging: view.opt('onD_Dragging') || function () {},
